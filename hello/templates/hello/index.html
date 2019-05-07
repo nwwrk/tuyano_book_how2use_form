@@ -8,11 +8,10 @@
 </head>
 <body>
     <h1>{{title}}</h1>
-    <p>{{message|safe}}</p>
+    <p>{{result|safe}}</p>
     <table>
         <form action="{% url 'index' %}" method="post">
             {% csrf_token %}
-            <label for="msg">message: </label>
             {{ form.as_table }}
             <tr>
                 <td><input type="submit" value="click"></td>

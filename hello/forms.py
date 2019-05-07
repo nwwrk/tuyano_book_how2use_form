@@ -1,6 +1,9 @@
 from django import forms
 
 class HelloForm(forms.Form):
-    name = forms.CharField(label='name')
-    mail = forms.CharField(label='mail')
-    age = forms.IntegerField(label='age')
+    data = [
+        ('one', 'radio 1'),
+        ('two', 'radio 2'),
+        ('three', 'radio 3'),
+    ]
+    choice = forms.ChoiceField(label='radio', choices=data, widget=forms.RadioSelect())
